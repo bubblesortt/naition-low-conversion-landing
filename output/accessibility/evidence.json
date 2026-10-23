@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-23",
+  "surface": "Local working version with course dates 7-8 November 2026 and visit.php tag removed",
+  "url": "http://127.0.0.1:8765/",
+  "accessibilityTarget": "WCAG 2.2 AA as review reference; not a conformance certification",
+  "lighthouse": {
+    "desktop": {
+      "mode": "snapshot",
+      "viewport": [
+        1440,
+        900
+      ],
+      "score": 96,
+      "failedAccessibilityAuditIds": [
+        "color-contrast"
+      ]
+    },
+    "mobile": {
+      "mode": "snapshot",
+      "viewport": [
+        390,
+        844
+      ],
+      "score": 96,
+      "failedAccessibilityAuditIds": [
+        "color-contrast"
+      ]
+    }
+  },
+  "keyboard": {
+    "firstTab": {
+      "tag": "BUTTON",
+      "name": "Оставить заявку",
+      "outline": "3px solid rgb(23, 99, 79)"
+    },
+    "afterEnter": {
+      "registrationTop": 0,
+      "activeTag": "BUTTON",
+      "activeName": "Оставить заявку",
+      "activeY": -5314
+    },
+    "nextTab": {
+      "activeTag": "A",
+      "activeName": "Сравнить тарифы",
+      "focusedFormField": false
+    }
+  },
+  "keyboardServerValidation": {
+    "error": "Укажите цель прохождения курса.",
+    "activeTag": "BODY",
+    "ariaInvalid": null,
+    "describedby": "form-hint",
+    "retainedName": true,
+    "disabled": false
+  },
+  "contrast": {
+    "footer": {
+      "foreground": "#7a7a7a",
+      "background": "#faf7f5",
+      "ratio": 4.02,
+      "requiredForNormalText": 4.5
+    },
+    "inputBoundary": {
+      "foreground": "#d8d2cb",
+      "background": "#ffffff",
+      "ratio": 1.5,
+      "targetForNecessaryComponentBoundary": 3
+    },
+    "buttonAndFocusOnWhite": {
+      "foreground": "#17634f",
+      "background": "#ffffff",
+      "ratio": 7.16
+    }
+  },
+  "semantics": {
+    "lang": "ru",
+    "h1Count": 1,
+    "mainCount": 1,
+    "headingHierarchy": "h1 -> h2 -> h3 without skipped levels",
+    "inputsLabeled": true,
+    "requiredExposed": true,
+    "autocomplete": [
+      "name",
+      "tel",
+      "email"
+    ],
+    "photoAlt": "Практика сердечно-легочной реанимации на манекене",
+    "statusLive": "polite"
+  },
+  "reflow": {
+    "viewport": [
+      320,
+      844
+    ],
+    "documentScrollWidth": 320,
+    "horizontalPageOverflow": false
+  },
+  "textResize": {
+    "method": "temporary root font-size x2, not browser zoom",
+    "rootFontSize": "32px",
+    "viewport": [
+      1440,
+      900
+    ],
+    "scrollWidth": 1440,
+    "horizontalOverflow": false,
+    "fields": [
+      {
+        "name": "name",
+        "width": 688,
+        "fontSize": "32px"
+      },
+      {
+        "name": "phone",
+        "width": 688,
+        "fontSize": "32px"
+      },
+      {
+        "name": "email",
+        "width": 688,
+        "fontSize": "32px"
+      },
+      {
+        "name": "purpose",
+        "width": 688,
+        "fontSize": "32px"
+      }
+    ]
+  },
+  "sourceOnlyObservation": {
+    "file": "js/main.js",
+    "line": 13,
+    "behavior": "smooth is explicit and not conditional on prefers-reduced-motion",
+    "reducedMotionEmulationTested": false
+  },
+  "limits": [
+    "No production audit of deployed latest changes",
+    "No VoiceOver/NVDA run",
+    "No real browser 200% or 400% zoom run; root font-size x2 was temporary and restored",
+    "No cross-browser or real-device testing",
+    "No success-path screen-reader announcement test",
+    "No source changes"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "score": 0.96,
+  "failed": [
+    {
+      "id": "color-contrast",
+      "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-DIV",
+            "path": "1,HTML,1,BODY,2,FOOTER,0,DIV",
+            "selector": "body > footer.site-footer > div.container",
+            "boundingRect": {
+              "top": 755,
+              "bottom": 804,
+              "left": 20,
+              "right": 370,
+              "width": 350,
+              "height": 49
+            },
+            "snippet": "<div class=\"container\">",
+            "nodeLabel": "© 2026 Учебный центр «Спаси-Себя». Курс первой помощи, Москва.",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #7a7a7a, background color: #faf7f5, font size: 11.4pt (15.2px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-BODY",
+                  "path": "1,HTML,1,BODY",
+                  "selector": "body",
+                  "boundingRect": {
+                    "top": -10878,
+                    "bottom": 844,
+                    "left": 0,
+                    "right": 390,
+                    "width": 390,
+                    "height": 11722
+                  },
+                  "snippet": "<body>",
+                  "nodeLabel": "body"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

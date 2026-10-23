@@ -1,0 +1,89 @@
+{
+  "checkedAt": "2026-10-23",
+  "localUrl": "http://127.0.0.1:8765/",
+  "runtime": "PHP 8.3.36 with pdo_sqlite",
+  "baseline": {
+    "desktop": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageHeight": 8596,
+      "programHeight": 2081,
+      "pricingY": 6776,
+      "registrationY": 7494
+    },
+    "mobile": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageHeight": 15433,
+      "programHeight": 4804,
+      "pricingY": 12758,
+      "registrationY": 14299
+    }
+  },
+  "after": {
+    "desktop": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageHeight": 6752,
+      "programHeight": 940,
+      "pricingY": 5027,
+      "registrationY": 5698,
+      "firstCtaY": 388,
+      "overflow": false
+    },
+    "mobile": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageHeight": 11720,
+      "programHeight": 2020,
+      "pricingY": 9073,
+      "registrationY": 10574,
+      "firstCtaY": 443,
+      "overflow": false
+    }
+  },
+  "checks": {
+    "sourceConstraints": "pass",
+    "phpSyntax": "pass",
+    "javascriptSyntax": "pass",
+    "unchangedJsApiSql": "pass",
+    "diffWhitespace": "pass",
+    "heroCtaDesktop": "pass",
+    "heroCtaMobile": "pass",
+    "allThreePricingCtasDesktop": "pass",
+    "pricingAnchor": "pass",
+    "keyboardFocusAndEnter": "pass",
+    "blankFormValidation": "pass",
+    "invalidEmailValidation": "pass",
+    "serverValidationRetainsInput": "pass",
+    "successfulSubmissionResetsForm": "pass",
+    "exactlyOneSubmittedOrderPersistedInLocalSqlite": "pass",
+    "buttonReenabledAfterErrorAndSuccess": "pass",
+    "horizontalOverflowAt320_390_1440": "none",
+    "browserErrorsAndWarnings": "none in checked local page",
+    "independentStaticReview": "no Critical or Important findings"
+  },
+  "limits": [
+    "No Webvisor data, CR or funnel counts",
+    "Remote deployment and simulator not run",
+    "Course date remains 15 August 2026 pending confirmation",
+    "bot_session_id absent in baseline and final",
+    "No network outage or cross-browser testing"
+  ],
+  "screenshots": [
+    "screenshots/before-desktop.jpg",
+    "screenshots/before-mobile.jpg",
+    "screenshots/after-desktop.jpg",
+    "screenshots/after-mobile.jpg",
+    "screenshots/after-desktop-program.jpg",
+    "screenshots/after-mobile-form.jpg"
+  ]
+}

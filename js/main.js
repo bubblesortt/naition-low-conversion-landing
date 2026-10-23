@@ -10,7 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            registrationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            registrationSection.scrollIntoView({
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+                block: 'start',
+            });
+            form?.querySelector('[name="name"]')?.focus({ preventScroll: true });
         });
     });
 
@@ -18,11 +22,48 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    // shortcut: API errors have no field id; match known messages until the API provides one.
+    const errorFields = new Map([
+        ['Укажите имя.', 'name'],
+        ['Укажите телефон.', 'phone'],
+        ['Укажите корректный e-mail.', 'email'],
+        ['Укажите цель прохождения курса.', 'purpose'],
+    ]);
+    let invalidField = null;
+    let originalDescription = null;
+
+    const clearFieldError = () => {
+        if (!invalidField) {
+            return;
+        }
+
+        invalidField.removeAttribute('aria-invalid');
+        if (originalDescription) {
+            invalidField.setAttribute('aria-describedby', originalDescription);
+        } else {
+            invalidField.removeAttribute('aria-describedby');
+        }
+        invalidField = null;
+    };
+
+    form.addEventListener('input', (event) => {
+        if (event.target === invalidField) {
+            clearFieldError();
+            message.textContent = '';
+            message.className = 'form-message';
+        }
+    });
+
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
         const submitButton = form.querySelector('button[type="submit"]');
         const formData = new FormData(form);
+        const activeElement = document.activeElement;
+        let focusTarget = message;
+
+        clearFieldError();
+        form.setAttribute('aria-busy', 'true');
 
         if (submitButton instanceof HTMLButtonElement) {
             submitButton.disabled = true;
@@ -55,10 +96,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if (message) {
                 message.textContent = error instanceof Error ? error.message : 'Не удалось отправить заявку.';
                 message.className = 'form-message error';
+
+                const fieldName = errorFields.get(message.textContent);
+                const field = fieldName ? form.elements.namedItem(fieldName) : null;
+                if (field && field.value === formData.get(fieldName)) {
+                    invalidField = field;
+                    originalDescription = field.getAttribute('aria-describedby');
+                    field.setAttribute('aria-invalid', 'true');
+                    field.setAttribute('aria-describedby', [originalDescription, message.id].filter(Boolean).join(' '));
+                    focusTarget = field;
+                } else if (field) {
+                    focusTarget = null;
+                }
             }
         } finally {
             if (submitButton instanceof HTMLButtonElement) {
                 submitButton.disabled = false;
+            }
+            form.removeAttribute('aria-busy');
+            if (document.activeElement === activeElement || document.activeElement === document.body) {
+                focusTarget?.focus();
             }
         }
     });

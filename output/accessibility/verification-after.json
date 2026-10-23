@@ -1,0 +1,161 @@
+{
+  "checkedAt": "2026-10-23",
+  "surface": "local working copy",
+  "url": "http://127.0.0.1:8765/",
+  "lighthouse": {
+    "before": {
+      "desktop": 96,
+      "mobile": 96
+    },
+    "after": {
+      "desktop": 100,
+      "mobile": 100
+    },
+    "mode": "snapshot",
+    "failedAccessibilityAuditsAfter": []
+  },
+  "sourceConstraints": {
+    "pass": true,
+    "formUnchangedByteForByte": true,
+    "phpChangeOutsideFormOnly": "tabindex=-1 on existing form-message",
+    "hooksPreserved": true,
+    "apiAndSqlUnchanged": true,
+    "datesPreserved": "7-8 November 2026",
+    "visitScriptStillRemovedPerPriorAuthorization": true
+  },
+  "checks": {
+    "ctaKeyboard": {
+      "activeField": "name",
+      "registrationTop": 0,
+      "focusOutline": "rgb(23, 99, 79) solid 3px"
+    },
+    "nextTab": "phone",
+    "pricingCtas": {
+      "pricingCtas": [
+        "Базовый",
+        "Расширенный",
+        "Корпоративный"
+      ],
+      "pass": true
+    },
+    "knownFieldErrors": [
+      {
+        "field": "name",
+        "message": "Укажите имя.",
+        "focused": "name",
+        "describedby": "form-message",
+        "retained": true
+      },
+      {
+        "field": "phone",
+        "message": "Укажите телефон.",
+        "focused": "phone",
+        "describedby": "form-message",
+        "retained": true
+      },
+      {
+        "field": "email",
+        "message": "Укажите корректный e-mail.",
+        "focused": "email",
+        "describedby": "form-message",
+        "retained": true
+      },
+      {
+        "field": "purpose",
+        "message": "Укажите цель прохождения курса.",
+        "focused": "purpose",
+        "describedby": "form-hint form-message",
+        "retained": true
+      }
+    ],
+    "correction": "aria-invalid, message association and old error cleared; original descriptions restored",
+    "repeatedError": {
+      "repeatedFailure": "pass",
+      "description": "form-hint form-message",
+      "focus": "purpose"
+    },
+    "success": {
+      "message": "Заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.",
+      "focused": "form-message",
+      "outline": "rgb(23, 99, 79) solid 3px",
+      "reset": true,
+      "buttonEnabled": true
+    },
+    "sqlite": "exactly one successful test order persisted for accessibility-fix@example.test",
+    "offline": {
+      "online": false,
+      "message": "Failed to fetch",
+      "focused": "form-message",
+      "valuesRetained": true,
+      "buttonEnabled": true
+    },
+    "pendingFocus": {
+      "busyDuringRequest": true,
+      "focusedAfterResponse": "phone",
+      "message": "Укажите цель прохождения курса."
+    },
+    "editedWhilePending": {
+      "currentValuePreserved": true,
+      "focused": "purpose",
+      "staleFieldErrorNotApplied": true,
+      "busy": null
+    },
+    "reducedMotion": {
+      "method": "temporary matchMedia stub and scrollIntoView observation; real native scroll",
+      "behavior": "instant",
+      "focused": "name"
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "focus": "purpose",
+      "invalid": "true",
+      "description": "form-hint form-message",
+      "overflow": false
+    },
+    "narrow": {
+      "viewport": [
+        320,
+        844
+      ],
+      "scrollWidth": 320,
+      "overflow": false,
+      "online": true
+    },
+    "phpSyntax": "pass",
+    "javascriptSyntax": "pass",
+    "diffWhitespace": "pass",
+    "independentStaticReview": "no Critical/Important findings"
+  },
+  "contrast": {
+    "fieldBoundary": {
+      "before": 1.5,
+      "after": 3.69,
+      "target": 3
+    },
+    "footer": {
+      "before": 4.02,
+      "after": 8.31,
+      "target": 4.5
+    }
+  },
+  "screenshots": [
+    "after-desktop-form.jpg",
+    "after-mobile-error.jpg"
+  ],
+  "temporaryInstrumentation": {
+    "network": "Offline only on local tab; restored; navigator.onLine confirmed true",
+    "fetch": "Real local PHP responses delayed temporarily to exercise in-flight edits and focus; wrappers restored",
+    "reducedMotion": "matchMedia stub and scrollIntoView observation only; native scroll preserved; restored"
+  },
+  "limits": [
+    "VoiceOver/NVDA not run",
+    "No production deploy or simulator run",
+    "Reduced-motion OS preference not physically toggled; branch tested with temporary matchMedia stub",
+    "Only current focus is tracked, not earlier navigation history",
+    "Field association depends on four existing API error messages; unknown errors focus the general message",
+    "No WCAG conformance certification"
+  ]
+}
