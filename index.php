@@ -6,6 +6,7 @@
     <title>Первая помощь: практический курс для каждого</title>
     <meta name="description" content="Курс первой помощи в Москве 7-8 ноября 2026: практика СЛР, помощь при кровотечениях и травмах с инструктором. Группа до 14 человек, от 4 900 ₽.">
     <link rel="stylesheet" href="css/style.css">
+    <script src="api/visit.php" defer></script>
     <script src="js/main.js" defer></script>
 </head>
 <body>
